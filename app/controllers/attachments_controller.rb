@@ -1,4 +1,8 @@
 class AttachmentsController < ApplicationController
+  def index
+    @attachments = Attachment.all
+  end
+
   def new
     @attachment = Attachment.new
   end
@@ -10,6 +14,26 @@ class AttachmentsController < ApplicationController
 
   def show
     @attachment = Attachment.find params[:id]
+  end
+
+  def edit
+    @attachment = Attachment.find params[:id]
+  end
+
+  def update
+    @attachment = Attachment.find params[:id]
+    if @attachment.update attachment_params
+      redirect_to @attachment
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @attachment = Attachment.find params[:id]
+    @attachment.destroy
+
+    redirect_to attachments_path
   end
 
 private

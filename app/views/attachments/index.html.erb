@@ -1,0 +1,5 @@
+<p><% @attachments.each do |attachment|%></p>
+<h3><%= link_to attachment.name, attachment %></h3>
+<% end %>
+
+<p><%= link_to 'Add an Attachment', new_attachment_path %></p>

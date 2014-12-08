@@ -2,3 +2,10 @@
 <p>Find me in app/views/attachments/show.html.erb</p>
 
 <%= image_tag @attachment.image.url %>
+
+
+<p><%= link_to 'Return to Attachments', attachments_path %></p>
+
+<p><%= link_to 'Edit This Attachment', edit_attachment_path %></p>
+
+<p><%= link_to 'Delete This Attachment', @attachment, method: :delete, data: { confirm: 'Are you sure?' } %></p>
