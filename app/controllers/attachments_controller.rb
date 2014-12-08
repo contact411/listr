@@ -9,7 +9,11 @@ class AttachmentsController < ApplicationController
 
   def create
     @attachment = Attachment.create(attachment_params)
-    redirect_to @attachment
+     if @attachment.save
+      redirect_to @attachment
+    else
+      render :new
+    end
   end
 
   def show
@@ -39,6 +43,6 @@ class AttachmentsController < ApplicationController
 private
 
 def attachment_params
-  params.require(:attachment).permit(:name, :image)
+  params.require(:attachment).permit(:name, :image, )
 end
 end
