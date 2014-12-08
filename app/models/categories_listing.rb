@@ -1,4 +1,4 @@
-class CategoriesListings < ActiveRecord::Base
+class CategoriesListing < ActiveRecord::Base
 
   belongs_to :category
   belongs_to :listing
