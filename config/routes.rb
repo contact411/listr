@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'listings/index'
+
   devise_for :users
   resources :attachments
 
