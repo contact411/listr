@@ -1,6 +1,18 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  config.action_mailer.smtp_settings = {
+    :address   => "smtp.mandrillapp.com",
+    :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
+    :enable_starttls_auto => true, # detects and uses STARTTLS
+    :user_name => ENV['MANDRILL_USERNAME'],
+    :password  => ENV['MANDRILL_APIKEY'], # SMTP password is any valid API key
+    :authentication => 'login', # Mandrill supports 'plain' or 'login'
+    :domain => 'listrninja.herokuapp.com', # your domain to identify your server when connecting
+  }
+
+  config.action_mailer.default_url_options = { host: 'listrninja.herokuapp.com/' }
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -13,19 +25,7 @@ Rails.application.configure do
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
-  config.action_mailer.smtp_settings = {
-    :address   => "smtp.mandrillapp.com",
-    :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
-    :enable_starttls_auto => true, # detects and uses STARTTLS
-    :user_name => ENV['MANDRILL_USERNAME'],
-    :password  => ENV['MANDRILL_APIKEY'], # SMTP password is any valid API key
-    :authentication => 'login', # Mandrill supports 'plain' or 'login'
-    :domain => 'listrninja.herokuapp.com', # your domain to identify your server when connecting
-  }
 
-
-
-config.action_mailer.default_url_options = { host: 'listrninja.herokuapp.com/' }
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
