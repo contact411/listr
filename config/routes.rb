@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
   
+  get 'pages/index'
+
   resources :attachments
   resources :categories
   resources :listings
 
   devise_for :users
 
-  root 'welcome#index'
+  root 'pages#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
