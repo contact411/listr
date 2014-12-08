@@ -1,9 +1,5 @@
-<h1>Attachments#new</h1>
-<p>Find me in app/views/attachments/new.html.erb</p>
+<h1>Add a Listing Picture</h1>
 
-<%= form_for @attachment do |f| %>
-    <%= f.text_field :name %>
-    <%= f.file_field :image %>
+<%= render 'form' %>
 
-    <%= f.submit %>
-<% end  %>
+

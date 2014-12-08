@@ -1,16 +1,10 @@
 Rails.application.routes.draw do
-  get 'categories/index'
-
-  get 'listings/index'
+  
+  resources :attachments
+  resources :categories
+  resources :listings
 
   devise_for :users
-  resources :attachments
-
-  get 'attachments/new'
-
-  get 'attachments/create'
-
-  get 'attachments/show'
 
   root 'welcome#index'
 
