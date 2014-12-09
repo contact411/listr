@@ -1,17 +1,7 @@
 
-<%= form_for @attachment do |f| %>
+<%= form_for [@listing, @attachment] do |f| %>
     <p><%= f.text_field :name %>
-    <%= f.file_field :image, type: :file, multiple: true %></p>
-
-    <p><%= f.text_field :name %>
-    <%= f.file_field :image, type: :file, multiple: true %></p>
-    
-    <p><%= f.text_field :name %>
-    <%= f.file_field :image, type: :file, multiple: true %></p>
-
-    <p><%= f.text_field :name %>
-    <%= f.file_field :image, type: :file, multiple: true %></p>
+    <%= f.file_field :image %></p>
  
-
     <%= f.submit %>
 <% end  %>
