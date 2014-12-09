@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
   
-  get 'pages/index'
+  
 
-  resources :attachments
+  
   resources :categories
   resources :listings
+  resources :attachments
+
+
+
 
   devise_for :users
 

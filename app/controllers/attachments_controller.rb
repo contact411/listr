@@ -5,10 +5,11 @@ class AttachmentsController < ApplicationController
 
   def new
     @attachment = Attachment.new
+
   end
 
   def create
-    @attachment = Attachment.create(attachment_params)
+    @attachment = Attachment.new(attachment_params)
      if @attachment.save
       redirect_to @attachment
     else
@@ -43,6 +44,6 @@ class AttachmentsController < ApplicationController
 private
 
 def attachment_params
-  params.require(:attachment).permit(:name, :image, )
+  params.require(:attachment).permit(:name, :image)
 end
 end
