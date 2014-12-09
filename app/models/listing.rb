@@ -6,4 +6,7 @@ class Listing < ActiveRecord::Base
   has_many :categories_listings
   has_many :categories, through: :categories_listings
 
+  geocoded_by :address
+  after_validation :geocode, :if => :address_changed?
+
 end
