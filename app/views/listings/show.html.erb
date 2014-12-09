@@ -1,10 +1,19 @@
-<h1>Listings</h1>
+<h1><%=@listing.title%></h1>
 
-<%= @listing.title %>
+<p><%=@listing.description%></p>
 
-<p><%= link_to 'Return to Listings', listings_path %></p>
+<% @listing.attachments.each do |attachment| %>
+  <%= image_tag attachment.image.url %> 
+<% end %>
 
-<p><%= link_to 'Edit This Listing', edit_listing_path %></p>
+<table>
+  <tr>
+    <td><%= link_to 'Return to Listings', listings_path %></td>
 
-<p><%= link_to 'Delete This Listing', @listing, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    <td><%= link_to 'Edit This Listing', edit_listing_path %></td>
 
+    <td><%= link_to 'Delete This Listing', @listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+    <td><%= link_to 'Add an Attachment', new_listing_attachment_path(@listing) %></td>
+  </tr>
+</table>

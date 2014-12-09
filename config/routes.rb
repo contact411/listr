@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
   
-  
 
-  
   resources :categories
-  resources :listings
-  resources :attachments
+  resources :listings do
+    resources :attachments
+  end
 
 
 
