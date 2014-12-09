@@ -48,3 +48,15 @@ private
   end
   
 end
+
+# Code for listing _form incase gecoder is not a nice person
+# <div class="form-group">
+#     <%= f.label :latitude %>
+#     <%= f.number_field :latitude %>
+# </div>
+
+# <div class="form-group">
+#     <%= f.label :longitude %>
+#     <%= f.number_field :longitude %>
+# </div>
+
