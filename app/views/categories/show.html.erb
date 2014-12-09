@@ -13,10 +13,13 @@
 <br>
 <br>
 <br>
+
+<% if user_signed_in? %>
 <p><%= link_to 'Add a Listing', new_listing_path %></p>
+<% end %>
 
 <p><%= link_to 'Return to Categories', categories_path %></p>
-
+<% if user_signed_in? && current_user.admin? %>
 <p><%= link_to 'Edit This Category', edit_category_path %></p>
-
 <p><%= link_to 'Delete This Category', @category, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+<% end %>

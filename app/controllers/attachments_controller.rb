@@ -1,4 +1,6 @@
 class AttachmentsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+  
   def index
     @listing = Listing.find params[:listing_id]
     @attachments = Attachment.all

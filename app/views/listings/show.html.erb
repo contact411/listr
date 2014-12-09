@@ -3,12 +3,12 @@
 <p><%=@listing.description%></p>
 
 <p><% @listing.categories.each do |category| %>
-    <%= link_to category.name, category %> 
-    <% end %>
+  <%= link_to category.name, category %> 
+  <% end %>
 </p>
 
 <% @listing.attachments.each do |attachment| %>
-  <%= image_tag attachment.image.url %> 
+<%= image_tag attachment.image.url(:medium) %> 
 <% end %>
 
 <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@listing.latitude}%2C#{@listing.longitude}" %>
@@ -17,11 +17,12 @@
   <tr>
     <td><%= link_to 'Return to Categories', categories_path %></td>
 
-
+    <% if user_signed_in? && (current_user.admin? || current_user.listing_ids.include?(@listing.id)) %>
     <td><%= link_to 'Edit This Listing', edit_listing_path %></td>
 
     <td><%= link_to 'Delete This Listing', @listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
     <td><%= link_to 'Add an Attachment', new_listing_attachment_path(@listing) %></td>
+    <% end %>
   </tr>
 </table>

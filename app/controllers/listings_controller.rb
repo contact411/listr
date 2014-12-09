@@ -1,4 +1,7 @@
 class ListingsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+  # before_action :find_listing, only: [:show, :edit, :update, :destroy]
+
   def index
     @listings = Listing.all
   end
@@ -9,6 +12,8 @@ class ListingsController < ApplicationController
 
   def create
     @listing = Listing.new(listing_params)
+    @listing.user_id = current_user.id
+
     if @listing.save
       redirect_to @listing
     else
@@ -16,16 +21,31 @@ class ListingsController < ApplicationController
     end
   end
 
+  # def create
+
+  #   @event = Event.find(params[:event_id])
+  #   @post = @event.posts.new post_params
+
+
+  #   @post.user_id = current_user.id 
+    
+  #   if @post.save
+  #     redirect_to event_path(@event)
+  #   else
+  #     render :new
+  #   end
+  # end
+
   def show
-    @listing = Listing.find params[:id]
+    @listing = Listing.find(params[:id])
   end
 
   def edit
-    @listing = Listing.find params[:id]
+    @listing = Listing.find(params[:id])
   end
 
   def update
-    @listing = Listing.find params[:id]
+    @listing = Listing.find(params[:id])
     if @listing.update listing_params
       redirect_to @listing
     else
@@ -34,7 +54,7 @@ class ListingsController < ApplicationController
   end
 
   def destroy
-    @listing = Listing.find params[:id]
+    @listing = Listing.find(params[:id])
     @listing.destroy
 
     redirect_to listings_path
@@ -42,6 +62,13 @@ class ListingsController < ApplicationController
 
 
 private
+  # def find_listing
+  #   if current_user.admin?
+  #     @listing = Listing.find(params[:id])
+  #   else
+  #     @listing = current_user.listings.find(params[:id])
+  #   end
+  # end
 
   def listing_params
     params.require(:listing).permit(:title, :description, :address, :price, { category_ids: []})
