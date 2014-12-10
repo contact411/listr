@@ -30,9 +30,28 @@ body {
     padding: none;
 }
 
+#feature {
+    position: relative;
+    background-image: url("13682_cityscape.jpg");
+    background-size: cover;
+    height: 550px;
+}
+
 #user_email {
     color: black;
     margin-top: 15px;
+}
+
+.search_bar {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: auto;
+    text-align: center;
+}
+
+#hero {
+    height: 100%;
 }
 
 
@@ -126,6 +145,6 @@ footer {
 /* testing */
 
 .img-portfolio {
-    height: 200px;
+    height: 400px;
     overflow: hidden;
 }
