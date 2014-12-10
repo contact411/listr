@@ -32,53 +32,42 @@
 <body>
 
     <!-- Navigation -->
-  
-<img id="featureimage" src="<%= image_url('13682_cityscape.jpg')%>">
-    
+    <div id="feature">
+     <div class="container" id="hero">
+        <h1 class="leadline">Welcome to Listr.ninja - Free local classifieds Ads from all over Australia</h1>
+        <div class="search_bar">
+            <%= form_tag listings_path, method: 'GET' do %> 
+            <div class="col-md-4 col-md-push-4">
+                <div class="input-group">
+                    <%= text_field_tag :query, nil, placeholder: 'Search listings', class: 'form-control input' %>
+                    <span class="input-group-btn">
+                        <%= submit_tag 'Search', class: 'btn btn-success' %> 
+                    </span>
+                        <% end %> 
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+        </div><!-- /.row -->
+    </div>
+</div>
+</div> 
    
-
     <!-- Page Content -->
     <div class="container">
 
-        
-
-
         <!-- Portfolio Section -->
         <div class="row">
-            <div class="col-lg-12">
-                <center><h1 class="page-header">
-                    Recent Listings
-                </h1></center>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
+            <center><h1 class="page-header">Recent Listings</h1></center>
+            <div class="col-md-4 img-portfolio">
+                <% @listings.each do |listing| %>
+                    <% if listing.attachments.first  %>
+                        <%= link_to listing do %> 
+                            <%= image_tag listing.attachments.first.image.url(:thumb) %>
+                        <% end %>
+                        <br>
+                        <br>
+                        <p><%= listing.title %></p>
+                    <% end %>
+                <% end %>
             </div>
         </div>
         <!-- /.row -->
@@ -127,7 +116,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p>Copyright &copy; Listr.ninja 2014</p>
                 </div>
             </div>
         </footer>
