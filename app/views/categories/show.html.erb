@@ -1,25 +1,71 @@
 
+<body>
 
-<h1><%= @category.name %></h1>
 
 
-<p><% @category.listings.each do |listing| %>
-  <%= link_to listing.title, listing %>
-<% end %></p>
+    <!-- Page Content -->
+    <div class="container">
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header"><%= @category.name %>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a>
+                    </li>
+                    <li class="active">Three Column Portfolio</li>
+                </ol>
+            </div>
+        </div>
+        <!-- /.row -->
 
-<% if user_signed_in? %>
-<p><%= link_to 'Add a Listing', new_listing_path %></p>
-<% end %>
+        <!-- Projects Row -->
 
-<p><%= link_to 'Return to Categories', categories_path %></p>
-<% if user_signed_in? && current_user.admin? %>
-<p><%= link_to 'Edit This Category', edit_category_path %></p>
-<p><%= link_to 'Delete This Category', @category, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-<% end %>
+        <div class="row">
+            <% @category.listings.each do |listing| %>
+                <div class="col-md-4 img-portfolio">
+                    <%= link_to listing do %>
+                        <% if listing.attachments.first %>
+                            <%= image_tag list.attachments.first, class: "img-responsive img-hover" %>
+                        <% end %>
+                    <% end %>
+                    <h3>
+                    <%= link_to listing.title, listing %>
+                    </h3>
+                    <p><%= listing.description %></p>
+                </div>
+            <% end %>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+            <% if user_signed_in? %>
+            <p><%= link_to 'Add a Listing', new_listing_path %></p>
+            <% end %>
+
+            <% if user_signed_in? && current_user.admin? %>
+            <p><%= link_to 'Edit This Category', edit_category_path %></p>
+            <p><%= link_to 'Delete This Category', @category, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+            <% end %>
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Listr.ninja 2014</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
