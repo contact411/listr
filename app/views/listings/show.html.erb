@@ -28,7 +28,11 @@
         <div class="row">
            
             <div class="col-md-8">
-              <%= image_tag(@listing.attachments.first.image.url(:medium)) %> 
+              <% if @listing.attachments.first %>
+                <%= image_tag(@listing.attachments.first.image.url(:medium)) %> 
+                <% else %>
+                <%= image_tag "http://placehold.it/750x450" %>
+              <% end %>
             </div>
          
             
