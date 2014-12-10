@@ -40,6 +40,8 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 
 gem 'geocoder'
+
+gem 'searchkick'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

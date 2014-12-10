@@ -3,7 +3,11 @@ class ListingsController < ApplicationController
   # before_action :find_listing, only: [:show, :edit, :update, :destroy]
 
   def index
-    @listings = Listing.all
+    if params[:query].present?
+      @listings = Listing.search params[:query], fields: [{title: :word_start}, {description: :word_start}]
+    else
+      @listings = Listing.all
+    end
   end
 
   def new
@@ -21,6 +25,14 @@ class ListingsController < ApplicationController
     end
   end
 
+  # def index
+  #   if params[:query].present?
+  #     @books = Book.search(params[:query], page: params[:page])
+  #   else
+  #     @books = Book.all.page params[:page]
+  #   end
+  # end
+
   # def create
 
   #   @event = Event.find(params[:event_id])
@@ -28,7 +40,7 @@ class ListingsController < ApplicationController
 
 
   #   @post.user_id = current_user.id 
-    
+
   #   if @post.save
   #     redirect_to event_path(@event)
   #   else
@@ -61,7 +73,7 @@ class ListingsController < ApplicationController
   end
 
 
-private
+  private
   # def find_listing
   #   if current_user.admin?
   #     @listing = Listing.find(params[:id])
