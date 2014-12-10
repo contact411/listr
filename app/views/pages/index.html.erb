@@ -32,21 +32,25 @@
 <body>
 
     <!-- Navigation -->
-<div id="feature">
-   <div class="container" id="hero">
-
-   
-
+    <div id="feature">
+     <div class="container" id="hero">
+        <h1 class="leadline">Welcome to Listr.ninja - Free local classifieds Ads from all over Australia</h1>
         <div class="search_bar">
-        <%= form_tag listings_path, method: 'GET' do %> 
-        <%= text_field_tag :query, nil, placeholder: 'Search', class: 'input' %>
-        <%= submit_tag 'Search', class: 'btn btn-success' %> 
-        </div>
+            <%= form_tag listings_path, method: 'GET' do %> 
+            <div class="col-md-4 col-md-push-4">
+                <div class="input-group">
+                    <%= text_field_tag :query, nil, placeholder: 'Search listings', class: 'form-control input' %>
+                    <span class="input-group-btn">
+                        <%= submit_tag 'Search', class: 'btn btn-success' %> 
+                    </span>
+                        <% end %> 
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+        </div><!-- /.row -->
     </div>
-  <% end %> 
+</div>
 </div> 
    
-
     <!-- Page Content -->
     <div class="container">
 

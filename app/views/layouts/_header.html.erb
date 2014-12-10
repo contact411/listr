@@ -19,7 +19,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <h1 id="mainlogo"><%= link_to "Listr.ninja", root_path, id: "logo" %><h1>
+                <%=  %>
+                <h1 id="mainlogo"><%= image_tag "Untitled-5.png" %><h1>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -38,7 +39,13 @@
                     <li><%= link_to "Sign In", new_user_session_path %></li> |
                     <li><%= link_to "Sign Up", new_user_registration_path %></li>
                    <% end %>
+                    <li> <div class="search_bar">
                     
+            <%= form_tag listings_path, method: 'GET' do %> 
+            <%= text_field_tag :query, nil, placeholder: 'Search', class: 'input' %>
+            <%= submit_tag 'Search', class: 'btn btn-success' %> </li>
+            <% end %>
+            </div>
                 </ul>
                 
             </div>
