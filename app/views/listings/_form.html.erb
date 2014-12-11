@@ -1,50 +1,46 @@
-<div class="loginform">
-
 <form role="form">
     <%= form_for @listing do |f|  %>
     
     <div class="form-group">
         <%= f.label :title %>
-        <%= f.text_field :title %>
+        <%= f.text_field :title, class: "form-control" %>
     </div>
 
     <div class="form-group">
         <%= f.label :description %>
-        <%= f.text_field :description %>
+        <%= f.text_field :description, class: "form-control" %>
     </div>
 
     <div class="form-group">
         <%= f.label :address %>
-        <%= f.text_field :address %>
+        <%= f.text_field :address, class: "form-control" %>
     </div>
 
     <div class="form-group">
         <%= f.label :price %>
-        <%= f.number_field :price %>
+        <%= f.number_field :price, class: "form-control" %>
     </div>
 
      <div class="form-group">
         <%= f.label :email %>
-        <%= f.text_field :email %>
+        <%= f.text_field :email, class: "form-control" %>
     </div>
 
      <div class="form-group">
         <%= f.label :mobile %>
-        <%= f.number_field :mobile %>
+        <%= f.number_field :mobile, class: "form-control" %>
     </div>
 
     <div>
         <%= f.label :category_ids, "Categories" %>
-        <%= f.collection_select :category_ids, Category.all, :id, :name, {}, multiple: true %>
+        <%= f.collection_select :category_ids, Category.all, :id, :name, {}, { multiple: true, class: 'form-control' } %>
     </div>
 
     <div class="form-group">
-        <%= f.submit %>
+        <%= f.submit class: 'btn btn-primary btn-block listing-btn' %>
     </div>
 
     <% end  %>
     
 
  </form>
-
-</div>
