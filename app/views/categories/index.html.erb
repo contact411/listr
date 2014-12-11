@@ -7,7 +7,7 @@
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                <center><h2 class="page-header">Categories</h2></center>
+                <center><h1 class="page-header">Categories</h1></center>
                 <ol class="breadcrumb">
                     <li><%= link_to "home", root_path %>
                     </li>
@@ -20,9 +20,9 @@
         <!-- Projects Row -->
         <div class="row" id="categoryrow">
             <% @categories.each do |category|%>
-            <div class="col-md-3 img-portfolio">
+            <div class="col-md-2 img-portfolio">
 
-                        <%= link_to category.name, category, class: 'btn btn-primary btn-block' %></button>
+                        <%= link_to category.name, category, class: 'btn btn-primary btn-block' %>
                         <p class="list-group-item-text">
                             <%= category.description %></p>
 

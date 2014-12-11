@@ -4,6 +4,7 @@ $navbar-padding-vertical: 0px;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed);
 
 
 /*!
@@ -24,6 +25,10 @@ body {
     padding-top: 10px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
+h3 {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
 .viewbutton {
     margin-top: 15px;
 }
@@ -39,7 +44,7 @@ body {
     height: 350px;
     padding-top: 30px;
     box-shadow: 5px 5px 2px #888888;
-    margin-right: 115px;
+    margin-right: 80px;
 }
 
 .inner {
