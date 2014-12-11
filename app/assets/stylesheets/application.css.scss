@@ -24,10 +24,24 @@ body {
     padding-top: 10px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
+
+
 .listingtiles {
-    border: 1px solid #777;
+    border: 2px solid #d9dade;
     border-radius: 10px;
     text-align: center;
+    height: 350px;
+    padding-top: 30px;
+    box-shadow: 5px 5px 2px #888888;
+}
+
+.listingtiles a {
+    text-decoration: none;
+}
+
+
+#listingdesc {
+    text-align: left;
 }
 
 .optionsmenu {
@@ -205,7 +219,7 @@ footer {
 /* testing */
 
 .img-portfolio {
-    height: 85px;
+    
     overflow: hidden;
 }
 
