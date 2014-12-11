@@ -26,18 +26,17 @@
         <!-- Portfolio Section -->
         <div class="row">
             <center><h1 class="page-header">Recent Listings</h1></center>
-            <div class="col-md-4 img-portfolio">
                 <% @listings.each do |listing| %>
                     <% if listing.attachments.first  %>
-                        <%= link_to listing do %> 
-                            <%= image_tag listing.attachments.first.image.url(:thumb) %>
-                        <% end %>
-                        <br>
-                        <br>
-                        <p><%= listing.title %></p>
+                        <div class="col-md-4 img-portfolio">
+                                 <%= link_to listing do %> 
+                                        <%= image_tag listing.attachments.first.image.url(:thumb) %>
+                                        <% end %>
+                            <p class="recenttitle"><%= listing.title %></p>
+                        </div>
                     <% end %>
                 <% end %>
-            </div>
+                       
         </div>
         <!-- /.row -->
 

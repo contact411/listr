@@ -24,7 +24,13 @@ body {
     padding-top: 10px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
+.viewbutton {
+    margin-top: 15px;
+}
 
+.recenttitle {
+    margin-top: 10px;
+}
 
 .listingtiles {
     border: 2px solid #d9dade;
@@ -33,6 +39,7 @@ body {
     height: 350px;
     padding-top: 30px;
     box-shadow: 5px 5px 2px #888888;
+    margin-right: 115px;
 }
 
 .inner {

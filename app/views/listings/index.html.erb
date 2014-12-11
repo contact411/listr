@@ -5,28 +5,29 @@
 
         <% @listings.each do |listing| %>
 
-        <% if listing.attachments.first  %>
-        <div class="row">
-        <%= link_to listing do %> 
-            <div class ="listingtiles col-md-4 img-portfolio">
-                <%= image_tag listing.attachments.first.image.url(:thumb) %>
-                <div class="inner">
-                    <hr>
-                    <h2><%= listing.title %></h2> 
+            <% if listing.attachments.first  %>
+        
+                <div class ="listingtiles col-md-3 img-portfolio">
+                    <%= link_to listing do %> 
+                        <%= image_tag listing.attachments.first.image.url(:thumb) %>
+                    <% end %>
+                    <div class="inner">
+                        <hr>
+                        
+                        <h2><%= link_to listing.title, listing %></h2> 
 
                 
-                <%= listing.description %><br><br>
+                        <%= listing.description.truncate(75) %>
+                    </div>
+                    <div class="viewbutton">
+                    <%= link_to 'View', listing.title, class: 'btn btn-primary' %>
+                    </div>
                 </div>
-                <%= link_to 'View', listing.title, class: 'btn btn-primary' %>
-            </div>
+
             <% end %>
-        </div>
+        
         <% end %>
     </div>
-    <% end %>
-
-    </div>
-
 </div>
 <div>
    <% if user_signed_in? %>
