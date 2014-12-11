@@ -55,13 +55,16 @@ body {
     margin-top: 70px;
 }
 
+
+
 .search_bar {
 
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    margin: auto;
+    /*margin-right: 200px;*/
     text-align: center;
+
 }
 
 #hero {
@@ -84,7 +87,7 @@ body {
 }
 
 .navbar-right {
-    width: 500px;
+    width: 600px;
     margin-top: 30px;
 }
 
@@ -92,6 +95,14 @@ body {
     opacity: 0.8;
 }
 
+#topsearch {
+    width: 300px;
+    margin-top: 25px;
+}
+
+#options {
+    width: 400px;
+}
 
 /* Home Page Carousel */
 

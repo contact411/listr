@@ -25,30 +25,31 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                      <li>
-                        <%= link_to 'Home', root_path %>
-                      </li>
-                       
-                      <li>
-                        <%= link_to 'Categories', categories_path %>
-                      </li>
+
+                <% unless params[:controller] == "pages" %>        
+                  <%= form_tag listings_path, method: 'GET', class: "navbar-form navbar-right", id:"topsearch" do %> 
+                    <%= text_field_tag :query, nil, placeholder: 'Search', class: 'form-control' %>
+                    <%= submit_tag 'Search', class: 'btn btn-success' %>
+                  <% end %>
+                <% end %>  
+
+                <ul class="nav navbar-nav navbar-right" id="options">
+                    <li>
+                      <%= link_to 'Home', root_path %>
+                    </li>
+                     
+                    <li>
+                      <%= link_to 'Categories', categories_path %>
+                    </li>
                     <% if user_signed_in? %>
                     <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
                      <% else %>
                     <li><%= link_to "Sign In", new_user_session_path %></li>
                     <li><%= link_to "Sign Up", new_user_registration_path %></li>
                    <% end %>
-                    <li> <div class="search_bar">
-                    <% unless params[:controller] == "pages" %>        
-                    <%= form_tag listings_path, method: 'GET' do %> 
-                      <%= text_field_tag :query, nil, placeholder: 'Search', class: 'input' %>
-                      <%= submit_tag 'Search', class: 'btn btn-success' %> </li>
-                    <% end %>
-                    <% end %>
-                    </div>
                 </ul>
-                
+
+              
             </div>
             <!-- /.navbar-collapse -->
         </div>
