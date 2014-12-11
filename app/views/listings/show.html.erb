@@ -43,12 +43,14 @@
                 <ul>
                     <li>Price: $<%= @listing.price %></li>
                     <li>Address: <%= @listing.address %></li>
+                    <li>Email: <%= @listing.email %></li>
+                    <li>Phone: <%= @listing.mobile %></li>
 
                 </ul>
 
        
-
-              <%= image_tag "http://maps.google.com/maps/api/staticmap?size=360x315&sensor=false&zoom=16&markers=#{@listing.latitude}%2C#{@listing.longitude}" %>
+              
+              <%= image_tag "http://maps.google.com/maps/api/staticmap?size=360x315&sensor=false&zoom=16&markers=#{@listing.latitude}%2C#{@listing.longitude}", :class => "maps_image"  %>
 
             </div>
 
