@@ -23,7 +23,7 @@
                 <% @category.listings.each do |listing| %>
                     <div class="col-md-4 img-portfolio">
                         <%= link_to listing do %>
-                            <% if listing.attachments.first %>
+                            <% if listing.attachments.first(:thumb) %>
                                 <%= image_tag listing.attachments.first, class: "img-responsive img-hover" %>
                             <% end %>
                         <% end %>

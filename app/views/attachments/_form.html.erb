@@ -1,6 +1,6 @@
 
 <%= form_for [@listing, @attachment] do |f| %>
-    <p><%= f.text_field :name %>
+    <p>
     <%= f.file_field :image, class: "form-control" %></p>
  
     <%= f.submit class: 'btn btn-primary btn-block listing-btn' %>
