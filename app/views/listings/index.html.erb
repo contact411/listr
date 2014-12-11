@@ -1,9 +1,5 @@
 
 <div class="loginform">
-<% if user_signed_in? %>
-<p><%= link_to 'Add a Listing', new_listing_path %></p>
-<% end %>
-
 <div class="row">
     <center><h2 class="page-header">Listings</h2></center>
     <div class="col-md-4 img-portfolio">
@@ -17,5 +13,9 @@
             <% end %>
         <% end %>
     </div>
+
+    <% if user_signed_in? %>
+<p><%= link_to 'Add a Listing', new_listing_path %></p>
+<% end %>
 </div>
 </div>

@@ -18,22 +18,22 @@
         <!-- /.row -->
 
         <!-- Projects Row -->
-
-        <div class="row">
-            <% @category.listings.each do |listing| %>
-                <div class="col-md-4 img-portfolio">
-                    <%= link_to listing do %>
-                        <% if listing.attachments.first %>
-                            <%= image_tag listing.attachments.first, class: "img-responsive img-hover" %>
+        
+            <div class="row">
+                <% @category.listings.each do |listing| %>
+                    <div class="col-md-4 img-portfolio">
+                        <%= link_to listing do %>
+                            <% if listing.attachments.first %>
+                                <%= image_tag listing.attachments.first, class: "img-responsive img-hover" %>
+                            <% end %>
                         <% end %>
-                    <% end %>
-                    <h3>
-                    <%= link_to listing.title, listing %>
-                    </h3>
-                    <p><%= listing.description %></p>
-                </div>
-            <% end %>
-        </div>
+                        <h3>
+                        <%= link_to listing.title, listing %>
+                        </h3>
+                        <p><%= listing.description %></p>
+                    </div>
+                <% end %>
+            </div>
         <!-- /.row -->
 
         <hr>
