@@ -1,21 +1,23 @@
 
 <div class="loginform">
-<div class="row">
-    <center><h2 class="page-header">Listings</h2></center>
-    <div class="col-md-4 img-portfolio">
-        <% @listings.each do |listing| %>
-            <% if listing.attachments.first  %>
-                <%= link_to listing do %> 
-                    <%= image_tag listing.attachments.first.image.url(:thumb) %>
-                <% end %>
-                
-                <p><%= listing.title %></p></div>
-            <% end %>
-        <% end %>
-    </div>
+    <div class="row">
+        <center><h2 class="page-header">Listings</h2></center>
 
+            <div class ="listingtiles col-md-4 img-portfolio">
+           
+                    <% @listings.each do |listing| %>
+                        <% if listing.attachments.first  %>
+                            <%= link_to listing do %> 
+                                <%= image_tag listing.attachments.first.image.url(:thumb) %>
+                            <% end %>
+                            
+                            <p><%= listing.title %></p></div>
+                        <% end %>
+                    <% end %>
+              
+            </div>
     <% if user_signed_in? %>
 <p><%= link_to 'Add a Listing', new_listing_path %></p>
 <% end %>
-</div>
+    </div>
 </div>

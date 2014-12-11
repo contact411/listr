@@ -17,10 +17,17 @@ $navbar-padding-vertical: 0px;
 html,
 body {
     margin-top: 27px;
+
 }
 
 body {
     padding-top: 10px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.listingtiles {
+    border: 1px solid #777;
+    border-radius: 10px;
+    text-align: center;
 }
 
 .optionsmenu {
