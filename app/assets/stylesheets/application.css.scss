@@ -1,3 +1,6 @@
+$navbar-height: 10px;
+$navbar-padding-vertical: 0px;
+
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -20,9 +23,8 @@ body {
     padding-top: 15px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
-#mainlogo {
-    text-decoration: none;
-
+.navbar-header img {
+    margin: 5px 0px;
 }
 
 #featureimage {
@@ -33,14 +35,14 @@ body {
 
 #feature {
     position: relative;
-    background-image: url("13682_cityscape.jpg");
+    background-image: url("2252.jpg");
     background-size: cover;
     height: 550px;
 }
 
 #user_email {
-    color: black;
-    margin-top: 15px;
+
+
 }
 
 .search_bar {
@@ -58,7 +60,11 @@ body {
 .leadline {
     color: white;
     width: 500px;
+    margin: auto;
+    margin-bottom: 2em;
+    padding: 0.5em 0;
     text-align: center;
+    border: 3px solid white;
 }
 
 .img-portfolio {
@@ -68,7 +74,7 @@ body {
 
 .navbar-right {
     width: 500px;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .img-hover:hover {
