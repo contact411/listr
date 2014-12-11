@@ -40,6 +40,10 @@ body {
     background-image: url("http://i.imgur.com/vqMKaqT.jpg");
 }
 
+.list-group a {
+    color: white;
+}
+
 #user_email {
 
 
@@ -168,6 +172,6 @@ footer {
 /* testing */
 
 .img-portfolio {
-    height: 400px;
+    height: 80px;
     overflow: hidden;
 }
