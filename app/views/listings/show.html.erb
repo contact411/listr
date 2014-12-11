@@ -57,18 +57,17 @@
         </div>
         <!-- /.row -->
 
-              <table>
-                <tr>
-
+           
+              <ul class="optionsmenu">
                   <% if user_signed_in? && (current_user.admin? || current_user.listing_ids.include?(@listing.id)) %>
-                  <td><%= link_to 'Edit This Listing', edit_listing_path %></td>
-
-                  <td><%= link_to 'Delete This Listing', @listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
-                  <td><%= link_to 'Add an Attachment', new_listing_attachment_path(@listing) %></td>
+                  <li><%= link_to 'Edit This Listing', edit_listing_path %></li>
+                
+                  <li><%= link_to 'Delete This Listing', @listing, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+                
+                 <li><%= link_to 'Add an Attachment', new_listing_attachment_path(@listing) %></li>
                   <% end %>
-              </tr>
-            </table>
+              </ul>
+           
 
         <!-- Related Projects Row -->
         <div class="row">
