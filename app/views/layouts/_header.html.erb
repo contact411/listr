@@ -29,7 +29,7 @@
                 <% unless params[:controller] == "pages" %>        
                   <%= form_tag listings_path, method: 'GET', class: "navbar-form navbar-right", id:"topsearch" do %> 
                     <%= text_field_tag :query, nil, placeholder: 'Search', class: 'form-control' %>
-                    <%= submit_tag 'Search', class: 'btn btn-success' %>
+                    <%= submit_tag 'Search', class: 'btn btn-primary' %>
                   <% end %>
                 <% end %>  
 

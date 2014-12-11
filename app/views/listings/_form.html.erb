@@ -1,32 +1,48 @@
-<%= form_for @listing do |f|  %>
+<div class="loginform">
 
-<div class="form-group">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= form_for @listing do |f|  %>
+    
+
+    <div class="form-group">
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :description %>
+        <%= f.text_field :description %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :address %>
+        <%= f.text_field :address %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :price %>
+        <%= f.number_field :price %>
+    </div>
+
+     <div class="form-group">
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+    </div>
+
+     <div class="form-group">
+        <%= f.label :mobile %>
+        <%= f.number_field :mobile %>
+    </div>
+
+    <div>
+        <%= f.label :category_ids, "Categories" %>
+        <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
+    </div>
+
+    <div class="form-group">
+        <%= f.submit %>
+    </div>
+
+    <% end  %>
+    
+
 </div>
-
-<div class="form-group">
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-</div>
-
-<div class="form-group">
-    <%= f.label :address %>
-    <%= f.text_field :address %>
-</div>
-
-<div class="form-group">
-    <%= f.label :price %>
-    <%= f.number_field :price %>
-</div>
-
-<div>
-    <%= f.label :category_ids, "Categories" %>
-    <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
-</div>
-
-<div class="form-group">
-    <%= f.submit %>
-</div>
-
-<% end  %>
