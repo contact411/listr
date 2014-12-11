@@ -3,32 +3,33 @@
     <div class="row">
         <center><h2 class="page-header">Listings</h2></center>
 
-            
-           
-                    <% @listings.each do |listing| %>
-                        <div class ="listingtiles col-md-4 img-portfolio">
-                        <% if listing.attachments.first  %>
-                            <%= link_to listing do %> 
-                                <%= image_tag listing.attachments.first.image.url(:thumb) %>
-                                    <div class="inner">
-                                        <h2><%= listing.title %></h2>
-                                        
-                                    </div>
-                                       <%= listing.description %><br><br>
+        <% @listings.each do |listing| %>
 
-                                        <%= link_to 'View', listing.title, class: 'btn btn-primary' %>
-                                         <% end %>
-                                    </div>
-                                
-                          
+        <% if listing.attachments.first  %>
+        <div class="row">
+        <%= link_to listing do %> 
+            <div class ="listingtiles col-md-4 img-portfolio">
+                <%= image_tag listing.attachments.first.image.url(:thumb) %>
+                <div class="inner">
+                    <hr>
+                    <h2><%= listing.title %></h2> 
 
-                        <% end %>
-                        </div>
-                    <% end %>
-              
-            
-    <% if user_signed_in? %>
+                
+                <%= listing.description %><br><br>
+                </div>
+                <%= link_to 'View', listing.title, class: 'btn btn-primary' %>
+            </div>
+            <% end %>
+        </div>
+        <% end %>
+    </div>
+    <% end %>
+
+    </div>
+
+</div>
+<div>
+   <% if user_signed_in? %>
 <p><%= link_to 'Add a Listing', new_listing_path %></p>
 <% end %>
-    </div>
 </div>
