@@ -28,14 +28,19 @@
                         <%= image_tag listing.attachments.first.image.url(:thumb) %>
 
                                     <h3><%= link_to listing.title, listing %> </h3>
-                                        
-                                        <% end %>
+                                    
+                                   
+                                <% end %>
                             <% end %>
                         <h3>
                         
                         </h3>
-                        <p><%= listing.description.truncate(200) %></p>
+                        <p><%= listing.description.truncate(150) %></p>
+                         <div class="viewbutton">
+                                    <%= link_to 'View', listing.title, class: 'btn btn-primary' %>
+                                    </div>
                     </div>
+
                 <% end %>
             </div>
         <!-- /.row -->
