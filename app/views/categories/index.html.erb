@@ -25,7 +25,8 @@
                        </div>
                        <div
                         class="list-group-item-text">
-                            <p><%= category.description %></p>
+                            <br>
+                            <p><%= category.description.truncate(100) %></p>
                         </div>
                 </div>
             <% end %>
