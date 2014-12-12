@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def index
     @categories = Category.all
-    @listings = Listing.order('id ASC').limit(4)
+    @listings = Listing.order(:updated_at).limit(4)
   end
 end
