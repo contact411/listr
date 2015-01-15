@@ -35,6 +35,8 @@ gem 'aws-sdk'
 
 gem 'devise'
 
+gem 'omniauth'
+
 gem 'bootstrap-sass'
 
 gem 'autoprefixer-rails'
